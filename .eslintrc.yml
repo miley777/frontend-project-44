@@ -1,5 +1,12 @@
 extends:
-- 'airbnb-base'
+  - 'airbnb-base'
 env:
-node:
-browser:
+   node: true
+plugins:
+  - 'eslint-plugin-import'
+parserOptions:
+  ecmaVersion: latest
+rules:
+  no-console: 0
+  import/extensions: 0
+  no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]
