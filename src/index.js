@@ -13,4 +13,9 @@ export const randomNum = () => {
   return number;
 };
 
+export const randomIndex = (max = 9) => {
+  const index = Math.floor(Math.random() * max);
+  return index;
+};
+
 export { userName };

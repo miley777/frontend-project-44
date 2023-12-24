@@ -23,8 +23,7 @@ const checkParity = () => {
 
   let count = 0;
   const countCorrect = 3;
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < countCorrect; i++) {
+  for (let i = 0; i < countCorrect; i += 1) {
     const answer = checkAnswer();
     if (answer === 0) {
       count += 1;

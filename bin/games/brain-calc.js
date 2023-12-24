@@ -4,20 +4,21 @@ import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import { questionGreeting, randomNum, userName } from '../../src/index.js';
 
-const randomSym = (arr, max) => {
+const randomIndex = (max = 9) => {
   const index = Math.floor(Math.random() * max);
-  return arr[index];
+  return index;
 };
 
 const checkAnswer = () => {
   const systNum1 = randomNum();
   const systNum2 = randomNum();
   const arrSymbols = ['+', '-', '*'];
-  const symbols = randomSym(arrSymbols, 3);
-  console.log(`Question: ${systNum1} ${symbols} ${systNum2}`);
+  const index = randomIndex(3);
+  const symbol = arrSymbols[index];
+  console.log(`Question: ${systNum1} ${symbol} ${systNum2}`);
   const usersAnswer = readlineSync.question('Your answer: ');
   let result;
-  switch (symbols) {
+  switch (symbol) {
     case '+':
       result = systNum1 + systNum2;
       break;
@@ -39,8 +40,7 @@ const checkCalc = () => {
   console.log('What is the result of the expression?');
   let count = 0;
   const countCorrect = 3;
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < countCorrect; i++) {
+  for (let i = 0; i < countCorrect; i += 1) {
     const answer = checkAnswer();
     if (answer === 0) {
       count += 1;
