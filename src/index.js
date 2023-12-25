@@ -28,7 +28,7 @@ export const intermidiateCheck = (answer, nameOfUser) => {
   if (answer === 0) {
     console.log('Correct!');
   } else {
-    console.log(`Let's try again, ${nameOfUser}`);
+    console.log(`Let's try again, ${nameOfUser}!`);
   }
 };
 
