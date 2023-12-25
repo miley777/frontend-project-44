@@ -34,7 +34,7 @@ export const intermidiateCheck = (answer, nameOfUser) => {
 
 export const finalCheck = (count, nameOfUser) => {
   if (count === 3) {
-    console.log(`Congratulations, ${nameOfUser}`);
+    console.log(`Congratulations, ${nameOfUser}!`);
   }
 };
 export { userName };
