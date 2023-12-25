@@ -13,9 +13,17 @@ export const randomNum = (max = 10) => {
   return number;
 };
 
-export const randomIndex = (max = 9) => {
-  const index = Math.floor(Math.random() * max);
-  return index;
+export const intermidiateCheck = (answer, nameOfUser) => {
+  if (answer === 0) {
+    console.log('Correct!');
+  } else {
+    console.log(`Let's try again, ${nameOfUser}`);
+  }
 };
 
+export const finalCheck = (count, nameOfUser) => {
+  if (count === 3) {
+    console.log(`Congratulations, ${nameOfUser}`);
+  }
+};
 export { userName };

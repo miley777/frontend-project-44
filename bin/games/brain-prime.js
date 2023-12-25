@@ -2,7 +2,9 @@
 
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
-import { questionGreeting, randomNum, userName } from '../../src/index.js';
+import {
+  questionGreeting, randomNum, userName, intermidiateCheck, finalCheck,
+} from '../../src/index.js';
 
 const isPrime = (primeNumber) => {
   let count = 2;
@@ -39,19 +41,16 @@ const checkPrime = () => {
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   let count = 0;
   const countCorrect = 3;
+  const nameOfUser = userName;
   for (let i = 0; i < countCorrect; i += 1) {
     const answer = checkAnswer();
-    if (answer === 0) {
-      count += 1;
-      console.log('Correct!');
-    } else {
-      console.log(`Let's try again, ${userName}`);
+    intermidiateCheck(answer, nameOfUser);
+    if (answer !== 0) {
       break;
     }
+    count += 1;
   }
-  if (count === 3) {
-    console.log(`Congratulations, ${userName}`);
-  }
+  finalCheck(count, nameOfUser);
 };
 
 checkPrime();

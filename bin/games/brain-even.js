@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import { questionGreeting, randomNum, userName } from '../../src/index.js';
+import {
+  questionGreeting, randomNum, userName, intermidiateCheck, finalCheck,
+} from '../../src/index.js';
 
 const checkAnswer = () => {
   const systNum = randomNum();
@@ -20,22 +22,18 @@ const checkAnswer = () => {
 const checkParity = () => {
   questionGreeting();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
   let count = 0;
   const countCorrect = 3;
+  const nameOfUser = userName;
   for (let i = 0; i < countCorrect; i += 1) {
     const answer = checkAnswer();
-    if (answer === 0) {
-      count += 1;
-      console.log('Correct!');
-    } else if (answer !== 0) {
-      console.log(`Let's try again, ${userName}`);
+    intermidiateCheck(answer, nameOfUser);
+    if (answer !== 0) {
       break;
     }
+    count += 1;
   }
-  if (count === 3) {
-    console.log(`Congratulations, ${userName}`);
-  }
+  finalCheck(count, nameOfUser);
 };
 
 checkParity();
