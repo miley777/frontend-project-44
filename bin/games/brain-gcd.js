@@ -35,13 +35,10 @@ const checkAnswer = () => {
   return desicion;
 };
 
-const checkGcd = () => {
-  questionGreeting();
-  console.log('Find the greatest common divisor of given numbers.');
+const checkRepeat = () => {
   let count = 0;
-  const countCorrect = 3;
   const nameOfUser = userName;
-  for (let i = 0; i < countCorrect; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const answer = checkAnswer();
     intermidiateCheck(answer, nameOfUser);
     if (answer !== 0) {
@@ -50,6 +47,12 @@ const checkGcd = () => {
     count += 1;
   }
   finalCheck(count, nameOfUser);
+};
+
+const checkGcd = () => {
+  questionGreeting();
+  console.log('Find the greatest common divisor of given numbers.');
+  checkRepeat();
 };
 
 checkGcd();

@@ -12,13 +12,10 @@ const checkAnswer = () => {
   return getCurrectAnswer(systemAnswer, usersAnswer);
 };
 
-const checkParity = () => {
-  questionGreeting();
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const checkRepeat = () => {
   let count = 0;
-  const countCorrect = 3;
   const nameOfUser = userName;
-  for (let i = 0; i < countCorrect; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const answer = checkAnswer();
     intermidiateCheck(answer, nameOfUser);
     if (answer !== 0) {
@@ -27,6 +24,12 @@ const checkParity = () => {
     count += 1;
   }
   finalCheck(count, nameOfUser);
+};
+
+const checkParity = () => {
+  questionGreeting();
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  checkRepeat();
 };
 
 checkParity();

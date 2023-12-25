@@ -32,13 +32,10 @@ const checkAnswer = () => {
   return desicion;
 };
 
-const checkCalc = () => {
-  questionGreeting();
-  console.log('What is the result of the expression?');
+const checkRepeat = () => {
   let count = 0;
-  const countCorrect = 3;
   const nameOfUser = userName;
-  for (let i = 0; i < countCorrect; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const answer = checkAnswer();
     intermidiateCheck(answer, nameOfUser);
     if (answer !== 0) {
@@ -47,6 +44,12 @@ const checkCalc = () => {
     count += 1;
   }
   finalCheck(count, nameOfUser);
+};
+
+const checkCalc = () => {
+  questionGreeting();
+  console.log('What is the result of the expression?');
+  checkRepeat();
 };
 
 checkCalc();

@@ -31,13 +31,10 @@ const checkAnswer = () => {
   return desicion;
 };
 
-const checkProgression = () => {
-  questionGreeting();
-  console.log('What number is missing in the progression?');
+const checkRepeat = () => {
   let count = 0;
-  const countCorrect = 3;
   const nameOfUser = userName;
-  for (let i = 0; i < countCorrect; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const answer = checkAnswer();
     intermidiateCheck(answer, nameOfUser);
     if (answer !== 0) {
@@ -46,6 +43,12 @@ const checkProgression = () => {
     count += 1;
   }
   finalCheck(count, nameOfUser);
+};
+
+const checkProgression = () => {
+  questionGreeting();
+  console.log('What number is missing in the progression?');
+  checkRepeat();
 };
 
 checkProgression();
