@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import {
-  questionGreeting, randomNum, userName, intermidiateCheck, finalCheck,
+  questionGreeting, randomNum, userName, intermidiateCheck, finalCheck, getCurrectAnswer,
 } from '../../src/index.js';
 
 const checkAnswer = () => {
@@ -9,14 +9,7 @@ const checkAnswer = () => {
   console.log(`Question: ${systNum}`);
   const usersAnswer = readlineSync.question('Your answer: ');
   const systemAnswer = systNum % 2 === 0 ? 'yes' : 'no';
-  let desicion = 0;
-  if (systemAnswer !== usersAnswer) {
-    desicion = 1;
-    if (desicion !== 0) {
-      console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${systemAnswer}'`);
-    }
-  }
-  return desicion;
+  return getCurrectAnswer(systemAnswer, usersAnswer);
 };
 
 const checkParity = () => {

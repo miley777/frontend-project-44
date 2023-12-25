@@ -3,7 +3,7 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
-  questionGreeting, randomNum, userName, intermidiateCheck, finalCheck,
+  questionGreeting, randomNum, userName, intermidiateCheck, finalCheck, getCurrectAnswer,
 } from '../../src/index.js';
 
 const isPrime = (primeNumber) => {
@@ -26,14 +26,7 @@ const checkAnswer = () => {
   console.log(`Question: ${systNum}`);
   const usersAnswer = readlineSync.question('Your answer: ');
   const systemAnswer = result === true ? 'yes' : 'no';
-  let desicion = 0;
-  if (systemAnswer !== usersAnswer) {
-    desicion = 1;
-    if (desicion !== 0) {
-      console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${systemAnswer}'`);
-    }
-  }
-  return desicion;
+  return getCurrectAnswer(systemAnswer, usersAnswer);
 };
 
 const checkPrime = () => {

@@ -13,6 +13,17 @@ export const randomNum = (max = 10) => {
   return number;
 };
 
+export const getCurrectAnswer = (systemAnswer, usersAnswer) => {
+  let desicion = 0;
+  if (systemAnswer !== usersAnswer) {
+    desicion = 1;
+    if (desicion !== 0) {
+      console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${systemAnswer}'`);
+    }
+  }
+  return desicion;
+};
+
 export const intermidiateCheck = (answer, nameOfUser) => {
   if (answer === 0) {
     console.log('Correct!');
