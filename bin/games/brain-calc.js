@@ -4,16 +4,11 @@ import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import { questionGreeting, randomNum, userName } from '../../src/index.js';
 
-const randomIndex = (max = 9) => {
-  const index = Math.floor(Math.random() * max);
-  return index;
-};
-
 const checkAnswer = () => {
   const systNum1 = randomNum();
   const systNum2 = randomNum();
   const arrSymbols = ['+', '-', '*'];
-  const index = randomIndex(3);
+  const index = randomNum(3);
   const symbol = arrSymbols[index];
   console.log(`Question: ${systNum1} ${symbol} ${systNum2}`);
   const usersAnswer = readlineSync.question('Your answer: ');

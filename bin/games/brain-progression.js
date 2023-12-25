@@ -2,9 +2,7 @@
 
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
-import {
-  questionGreeting, randomNum, userName, randomIndex,
-} from '../../src/index.js';
+import { questionGreeting, randomNum, userName } from '../../src/index.js';
 
 const checkAnswer = () => {
   const systNum = randomNum();
@@ -17,8 +15,8 @@ const checkAnswer = () => {
     sum += systNumAdd;
     arrProgress.push(sum);
   }
-  const numberInArr = randomIndex(4) + 5;
-  const index = randomIndex(numberInArr);
+  const numberInArr = randomNum(4) + 5;
+  const index = randomNum(numberInArr);
   const copyArrProgress = arrProgress.slice(0, numberInArr);
   const secretNum = arrProgress[index];
   copyArrProgress[index] = '..';

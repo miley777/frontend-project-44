@@ -8,8 +8,8 @@ export const questionGreeting = () => {
   console.log(`Hello, ${userName}!`);
 };
 
-export const randomNum = () => {
-  const number = Math.floor(Math.random() * 10);
+export const randomNum = (max = 10) => {
+  const number = Math.floor(Math.random() * max);
   return number;
 };
 
