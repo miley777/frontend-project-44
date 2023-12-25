@@ -12,7 +12,8 @@ const checkAnswer = () => {
   const arrDiv = [];
   let count = 0;
   arrDiv.push(count);
-  while (count <= Math.min(systNum1, systNum2)) {
+  const minSystNum = Math.min(systNum1, systNum2);
+  while (count <= minSystNum) {
     if ((systNum1 % count === 0) && (systNum2 % count === 0)) {
       arrDiv.push(count);
     }

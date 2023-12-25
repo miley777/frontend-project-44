@@ -4,19 +4,23 @@ import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import { questionGreeting, randomNum, userName } from '../../src/index.js';
 
-const checkAnswer = () => {
-  const systNum = randomNum();
-  let result = true;
+const isPrime = (primeNumber) => {
   let count = 2;
-  if (systNum < 2) {
-    result = false;
+  if (primeNumber < 2) {
+    return false;
   }
-  while (count <= systNum / 2) {
-    if (systNum % count === 0) {
-      result = false;
+  while (count <= primeNumber / 2) {
+    if (primeNumber % count === 0) {
+      return false;
     }
     count += 1;
   }
+  return true;
+};
+
+const checkAnswer = () => {
+  const systNum = randomNum();
+  const result = isPrime(systNum);
   console.log(`Question: ${systNum}`);
   const usersAnswer = readlineSync.question('Your answer: ');
   const systemAnswer = result === true ? 'yes' : 'no';
