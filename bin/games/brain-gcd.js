@@ -4,7 +4,7 @@ import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
   // eslint-disable-next-line import/named
-  questionGreeting, randomNum, userName, intermidiateCheck, finalCheck,
+  questionGreeting, getRandomNum, userName, getIntermidiateCheck, getFinalCheck,
 } from '../../src/index.js';
 
 const getArrDiv = (systNum1, systNum2) => {
@@ -23,8 +23,8 @@ const getArrDiv = (systNum1, systNum2) => {
 };
 
 const checkAnswer = () => {
-  const systNum1 = randomNum();
-  const systNum2 = randomNum();
+  const systNum1 = getRandomNum();
+  const systNum2 = getRandomNum();
   console.log(`Question: ${systNum1} ${systNum2}`);
   const usersAnswer = readlineSync.question('Your answer: ');
   const result = getArrDiv(systNum1, systNum2);
@@ -40,13 +40,13 @@ const checkRepeat = () => {
   const nameOfUser = userName;
   for (let i = 0; i < 3; i += 1) {
     const answer = checkAnswer();
-    intermidiateCheck(answer, nameOfUser);
+    getIntermidiateCheck(answer, nameOfUser);
     if (answer !== 0) {
       break;
     }
     count += 1;
   }
-  finalCheck(count, nameOfUser);
+  getFinalCheck(count, nameOfUser);
 };
 
 const checkGcd = () => {

@@ -3,7 +3,7 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
-  questionGreeting, randomNum, userName, intermidiateCheck, finalCheck, getCurrectAnswer,
+  questionGreeting, getRandomNum, userName, getIntermidiateCheck, getFinalCheck, getCurrectAnswer,
 } from '../../src/index.js';
 
 const isPrime = (primeNumber) => {
@@ -21,7 +21,7 @@ const isPrime = (primeNumber) => {
 };
 
 const checkAnswer = () => {
-  const systNum = randomNum();
+  const systNum = getRandomNum();
   const result = isPrime(systNum);
   console.log(`Question: ${systNum}`);
   const usersAnswer = readlineSync.question('Your answer: ');
@@ -34,13 +34,13 @@ const checkRepeat = () => {
   const nameOfUser = userName;
   for (let i = 0; i < 3; i += 1) {
     const answer = checkAnswer();
-    intermidiateCheck(answer, nameOfUser);
+    getIntermidiateCheck(answer, nameOfUser);
     if (answer !== 0) {
       break;
     }
     count += 1;
   }
-  finalCheck(count, nameOfUser);
+  getFinalCheck(count, nameOfUser);
 };
 
 const checkPrime = () => {

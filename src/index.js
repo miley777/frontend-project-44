@@ -8,7 +8,7 @@ export const questionGreeting = () => {
   console.log(`Hello, ${userName}!`);
 };
 
-export const randomNum = (max = 10) => {
+export const getRandomNum = (max = 10) => {
   const number = Math.floor(Math.random() * max);
   return number;
 };
@@ -24,7 +24,7 @@ export const getCurrectAnswer = (systemAnswer, usersAnswer) => {
   return desicion;
 };
 
-export const intermidiateCheck = (answer, nameOfUser) => {
+export const getIntermidiateCheck = (answer, nameOfUser) => {
   if (answer === 0) {
     console.log('Correct!');
   } else {
@@ -32,7 +32,7 @@ export const intermidiateCheck = (answer, nameOfUser) => {
   }
 };
 
-export const finalCheck = (count, nameOfUser) => {
+export const getFinalCheck = (count, nameOfUser) => {
   if (count === 3) {
     console.log(`Congratulations, ${nameOfUser}!`);
   }
