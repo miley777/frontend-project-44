@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
-  questionGreeting, getCurrectAnswer, checkRepeat,
+  questionGreeting, getCurrectAnswer, getIntermidiateCheck, getFinalCheck, userName,
 } from '../index.js';
 
 import getRandomNumber from '../helpers.js';
@@ -28,7 +28,7 @@ export const checkAnswer = () => {
   const systemAnswer = result === true ? 'yes' : 'no';
   return getCurrectAnswer(systemAnswer, usersAnswer);
 };
-/*
+
 const checkRepeat = () => {
   let count = 0;
   const nameOfUser = userName;
@@ -42,7 +42,7 @@ const checkRepeat = () => {
   }
   getFinalCheck(count, nameOfUser);
 };
-*/
+
 const checkPrime = () => {
   questionGreeting();
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');

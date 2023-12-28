@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
 import {
-  questionGreeting, getCurrectAnswer, checkRepeat,
+  // eslint-disable-next-line import/named
+  questionGreeting, getCurrectAnswer, getIntermidiateCheck, getFinalCheck, userName,
 } from '../index.js';
 
 import getRandomNumber from '../helpers.js';
@@ -17,7 +18,7 @@ export const checkAnswer = () => {
   const systemAnswer = isSystemAnswer(systNumber);
   return getCurrectAnswer(systemAnswer, usersAnswer);
 };
-/*
+
 const checkRepeat = () => {
   let count = 0;
   const nameOfUser = userName;
@@ -31,7 +32,7 @@ const checkRepeat = () => {
   }
   getFinalCheck(count, nameOfUser);
 };
-*/
+
 const checkParity = () => {
   questionGreeting();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
