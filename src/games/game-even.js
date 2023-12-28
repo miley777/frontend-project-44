@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import {
   // eslint-disable-next-line import/named
-  questionGreeting, getCurrectAnswer, checkRepeat,
+  questionGreeting, getCurrectAnswer, runEngine,
   // getIntermidiateCheck, getFinalCheck, userName,
 } from '../index.js';
 
@@ -38,7 +38,7 @@ const checkRepeat = () => {
 const checkParity = () => {
   questionGreeting();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  checkRepeat();
+  runEngine(checkAnswer());
 };
 
 export default checkParity;

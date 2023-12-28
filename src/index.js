@@ -2,11 +2,13 @@ import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
 
-const userName = readlineSync.question('May I have your name? ');
+// const userName = readlineSync.question('May I have your name? ');
 
+/*
 export const questionGreeting = () => {
   console.log(`Hello, ${userName}!`);
 };
+*/
 
 export const getCurrectAnswer = (systemAnswer, usersAnswer) => {
   let desicion = 0;
@@ -18,7 +20,7 @@ export const getCurrectAnswer = (systemAnswer, usersAnswer) => {
   }
   return desicion;
 };
-
+/*
 export const getIntermidiateCheck = (answer, nameOfUser) => {
   if (answer === 0) {
     console.log('Correct!');
@@ -32,18 +34,28 @@ export const getFinalCheck = (count, nameOfUser) => {
     console.log(`Congratulations, ${nameOfUser}!`);
   }
 };
+*/
+// export { userName };
 
-export { userName };
-
-export const checkRepeat = (checkAnswer) => {
+export const runEngine = (gameDisc, answer) => {
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(gameDisc);
+  console.log(`Hello, ${userName}!`);
   let count = 0;
-  const nameOfUser = userName;
   for (let i = 0; i < 3; i += 1) {
-    getIntermidiateCheck(checkAnswer, nameOfUser);
-    if (checkAnswer !== 0) {
+    // const answer = checkAnswer;
+    if (answer === 0) {
+      console.log('Correct!');
+    } else {
+      console.log(`Let's try again, ${userName}!`);
       break;
     }
     count += 1;
   }
-  getFinalCheck(count, nameOfUser);
+  if (count === 3) {
+    console.log(`Congratulations, ${userName}!`);
+  }
+  // getFinalCheck(count, nameOfUser);
 };
+
+// export default runEngine;

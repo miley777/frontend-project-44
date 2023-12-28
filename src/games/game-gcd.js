@@ -26,9 +26,10 @@ export const checkAnswer = () => {
   const systNumber1 = getRandomNumber(1, 100);
   const systNumber2 = getRandomNumber(1, 100);
   console.log(`Question: ${systNumber1} ${systNumber2}`);
-  const usersAnswer = readlineSync.question('Your answer: ');
+  const userAnswer = readlineSync.question('Your answer: ');
   const result = getArrDivisors(systNumber1, systNumber2);
-  const desicion = result === Number(usersAnswer) ? 0 : 1;
+  const usersAnswer = Number(userAnswer);
+  const desicion = result === usersAnswer ? 0 : 1;
   if (desicion !== 0) {
     console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${result}'`);
   }

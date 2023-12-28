@@ -1,8 +1,6 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
-import {
-  questionGreeting, checkRepeat,
-} from '../index.js';
+import { runEngine, getCurrectAnswer } from '../index.js';
 
 // eslint-disable-next-line import/named
 import getRandomNumber from '../helpers.js';
@@ -25,19 +23,24 @@ export const checkAnswer = () => {
   const index = getRandomNumber(0, 3);
   const symbol = operators[index];
   console.log(`Question: ${systNumber1} ${symbol} ${systNumber2}`);
-  const usersAnswer = readlineSync.question('Your answer: ');
-  const result = getSymbol(symbol, systNumber1, systNumber2);
-  const desicion = result === Number(usersAnswer) ? 0 : 1;
+  const userAnswer = readlineSync.question('Your answer: ');
+  const systemAnswer = getSymbol(symbol, systNumber1, systNumber2);
+  const usersAnswer = Number(userAnswer);
+  getCurrectAnswer(systemAnswer, usersAnswer);
+  /*
+  const desicion = systemAnswer === usersAnswer ? 0 : 1;
   if (desicion !== 0) {
-    console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${result}'`);
+    console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${systemAnswer}'`);
   }
   return desicion;
+  */
 };
 
 const checkCalc = () => {
-  questionGreeting();
-  console.log('What is the result of the expression?');
-  checkRepeat(checkAnswer);
+  // questionGreeting();
+  const gameDescription = 'What is the result of the expression?';
+  const result = checkAnswer();
+  runEngine(gameDescription, result);
 };
 
 export default checkCalc;
