@@ -1,11 +1,10 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
-  questionGreeting,
-  getRandomNumber, userName, getIntermidiateCheck, getFinalCheck, getCurrectAnswer,
-} from '../../src/index.js';
+  questionGreeting, userName, getIntermidiateCheck, getFinalCheck, getCurrectAnswer,
+} from '../index.js';
+
+import getRandomNumber from '../helpers.js';
 
 const isPrime = (primeNumber) => {
   let count = 2;
@@ -22,9 +21,9 @@ const isPrime = (primeNumber) => {
 };
 
 const checkAnswer = () => {
-  const systNum = getRandomNumber();
-  const result = isPrime(systNum);
-  console.log(`Question: ${systNum}`);
+  const systNumber = getRandomNumber(1, 100);
+  const result = isPrime(systNumber);
+  console.log(`Question: ${systNumber}`);
   const usersAnswer = readlineSync.question('Your answer: ');
   const systemAnswer = result === true ? 'yes' : 'no';
   return getCurrectAnswer(systemAnswer, usersAnswer);
@@ -50,4 +49,4 @@ const checkPrime = () => {
   checkRepeat();
 };
 
-checkPrime();
+export default checkPrime;

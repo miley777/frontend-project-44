@@ -7,12 +7,7 @@ const userName = readlineSync.question('May I have your name? ');
 export const questionGreeting = () => {
   console.log(`Hello, ${userName}!`);
 };
-/*
-export const getRandomNumber = (max = 10) => {
-  const number = Math.floor(Math.random() * max);
-  return number;
-};
-*/
+
 export const getCurrectAnswer = (systemAnswer, usersAnswer) => {
   let desicion = 0;
   if (systemAnswer !== usersAnswer) {

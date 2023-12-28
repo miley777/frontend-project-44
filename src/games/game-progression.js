@@ -1,33 +1,36 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
-  questionGreeting,
-  getRandomNumber, userName, getIntermidiateCheck, getFinalCheck,
-} from '../../src/index.js';
+  questionGreeting, userName, getIntermidiateCheck, getFinalCheck,
+} from '../index.js';
 
-const checkAnswer = () => {
-  const systNum = getRandomNumber();
-  const systNumAdd = getRandomNumber();
-  const arrProgress = [];
+import getRandomNumber from '../helpers.js';
+
+const createArrProgression = (arrProgress, systNumber, systNumberAdd) => {
+  let sum = systNumber;
+  arrProgress.push(systNumber);
   const maxCount = 10;
-  let sum = systNum;
-  arrProgress.push(systNum);
   for (let i = 1; i <= maxCount - 1; i += 1) {
-    sum += systNumAdd;
+    sum += systNumberAdd;
     arrProgress.push(sum);
   }
-  const numberInArr = getRandomNumber(4) + 5;
-  const index = getRandomNumber(numberInArr);
+};
+
+const checkAnswer = () => {
+  const systNumber = getRandomNumber(1, 10);
+  const systNumberAdd = getRandomNumber(1, 10);
+  const arrProgress = [];
+  createArrProgression(arrProgress, systNumber, systNumberAdd);
+  const numberInArr = getRandomNumber(1, 4) + 5;
+  const index = getRandomNumber(1, numberInArr);
   const copyArrProgress = arrProgress.slice(0, numberInArr);
-  const secretNum = arrProgress[index];
+  const secretNumber = arrProgress[index];
   copyArrProgress[index] = '..';
   console.log(`Question: ${copyArrProgress.join(' ')}`);
   const usersAnswer = readlineSync.question('Your answer: ');
-  const desicion = secretNum === Number(usersAnswer) ? 0 : 1;
+  const desicion = secretNumber === Number(usersAnswer) ? 0 : 1;
   if (desicion !== 0) {
-    console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${secretNum}'`);
+    console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${secretNumber}'`);
   }
   return desicion;
 };
@@ -52,4 +55,4 @@ const checkProgression = () => {
   checkRepeat();
 };
 
-checkProgression();
+export default checkProgression;

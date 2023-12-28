@@ -1,15 +1,21 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import {
   questionGreeting,
-  getRandomNumber, userName, getIntermidiateCheck, getFinalCheck, getCurrectAnswer,
-} from '../../src/index.js';
+  userName, getIntermidiateCheck, getFinalCheck, getCurrectAnswer,
+} from '../index.js';
+
+import getRandomNumber from '../helpers.js';
+
+const isSystemAnswer = (systNumber) => {
+  const systAnswer = systNumber % 2 === 0 ? 'yes' : 'no';
+  return systAnswer;
+};
 
 const checkAnswer = () => {
-  const systNum = getRandomNumber();
-  console.log(`Question: ${systNum}`);
+  const systNumber = getRandomNumber(1, 100);
+  console.log(`Question: ${systNumber}`);
   const usersAnswer = readlineSync.question('Your answer: ');
-  const systemAnswer = systNum % 2 === 0 ? 'yes' : 'no';
+  const systemAnswer = isSystemAnswer(systNumber);
   return getCurrectAnswer(systemAnswer, usersAnswer);
 };
 
@@ -33,4 +39,4 @@ const checkParity = () => {
   checkRepeat();
 };
 
-checkParity();
+export default checkParity;
