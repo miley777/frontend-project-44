@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
-  questionGreeting, getIntermidiateCheck, getFinalCheck, userName,
+  questionGreeting, checkRepeat,
 } from '../index.js';
 
 // eslint-disable-next-line import/named
@@ -34,24 +34,10 @@ export const checkAnswer = () => {
   return desicion;
 };
 
-const checkRepeat = () => {
-  let count = 0;
-  const nameOfUser = userName;
-  for (let i = 0; i < 3; i += 1) {
-    const answer = checkAnswer();
-    getIntermidiateCheck(answer, nameOfUser);
-    if (answer !== 0) {
-      break;
-    }
-    count += 1;
-  }
-  getFinalCheck(count, nameOfUser);
-};
-
 const checkCalc = () => {
   questionGreeting();
   console.log('What is the result of the expression?');
-  checkRepeat();
+  checkRepeat(checkAnswer);
 };
 
 export default checkCalc;

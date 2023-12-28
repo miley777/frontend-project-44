@@ -34,3 +34,16 @@ export const getFinalCheck = (count, nameOfUser) => {
 };
 
 export { userName };
+
+export const checkRepeat = (checkAnswer) => {
+  let count = 0;
+  const nameOfUser = userName;
+  for (let i = 0; i < 3; i += 1) {
+    getIntermidiateCheck(checkAnswer, nameOfUser);
+    if (checkAnswer !== 0) {
+      break;
+    }
+    count += 1;
+  }
+  getFinalCheck(count, nameOfUser);
+};
