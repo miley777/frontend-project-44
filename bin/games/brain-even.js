@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
 import {
-  questionGreeting, getRandomNum, userName, getIntermidiateCheck, getFinalCheck, getCurrectAnswer,
+  questionGreeting,
+  getRandomNumber, userName, getIntermidiateCheck, getFinalCheck, getCurrectAnswer,
 } from '../../src/index.js';
 
 const checkAnswer = () => {
-  const systNum = getRandomNum();
+  const systNum = getRandomNumber();
   console.log(`Question: ${systNum}`);
   const usersAnswer = readlineSync.question('Your answer: ');
   const systemAnswer = systNum % 2 === 0 ? 'yes' : 'no';

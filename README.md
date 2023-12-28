@@ -51,24 +51,30 @@
 
 Пример запуска показан в видео по ссылке ниже:
 
-https://asciinema.org/a/Xe7rNizMLGWpiADxbbAwSqpAW
+
+[![asciicast](https://asciinema.org/a/Xe7rNizMLGWpiADxbbAwSqpAW.svg)](https://asciinema.org/a/Xe7rNizMLGWpiADxbbAwSqpAW)
 
 # brain-even
 
-https://asciinema.org/a/g1i3e5q83XIK8Z6p5F6uftbW7
+
+[![asciicast](https://asciinema.org/a/g1i3e5q83XIK8Z6p5F6uftbW7.svg)](https://asciinema.org/a/g1i3e5q83XIK8Z6p5F6uftbW7)
 
 # brain-calc
 
-https://asciinema.org/a/1tSlVqY9eDgfOdBwNW4LgkU2i
+
+[![asciicast](https://asciinema.org/a/1tSlVqY9eDgfOdBwNW4LgkU2i.svg)](https://asciinema.org/a/1tSlVqY9eDgfOdBwNW4LgkU2i)
 
 # brain-gcd
 
-https://asciinema.org/a/2ahkitcqRyFVdDKRiLzw8WGGU
+
+[![asciicast](https://asciinema.org/a/2ahkitcqRyFVdDKRiLzw8WGGU.svg)](https://asciinema.org/a/2ahkitcqRyFVdDKRiLzw8WGGU)
 
 # brain-progression
 
-https://asciinema.org/a/Z66tJm3elak2e8MikGvnEZU8Z
+
+[![asciicast](https://asciinema.org/a/Z66tJm3elak2e8MikGvnEZU8Z.svg)](https://asciinema.org/a/Z66tJm3elak2e8MikGvnEZU8Z)
 
 # brain-prime
 
-https://asciinema.org/a/GRAgWBcp2G9H5FQj2e7UigIl1
+
+[![asciicast](https://asciinema.org/a/GRAgWBcp2G9H5FQj2e7UigIl1.svg)](https://asciinema.org/a/GRAgWBcp2G9H5FQj2e7UigIl1)

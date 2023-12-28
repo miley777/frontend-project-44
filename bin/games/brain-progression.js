@@ -3,12 +3,13 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
-  questionGreeting, getRandomNum, userName, getIntermidiateCheck, getFinalCheck,
+  questionGreeting,
+  getRandomNumber, userName, getIntermidiateCheck, getFinalCheck,
 } from '../../src/index.js';
 
 const checkAnswer = () => {
-  const systNum = getRandomNum();
-  const systNumAdd = getRandomNum();
+  const systNum = getRandomNumber();
+  const systNumAdd = getRandomNumber();
   const arrProgress = [];
   const maxCount = 10;
   let sum = systNum;
@@ -17,8 +18,8 @@ const checkAnswer = () => {
     sum += systNumAdd;
     arrProgress.push(sum);
   }
-  const numberInArr = getRandomNum(4) + 5;
-  const index = getRandomNum(numberInArr);
+  const numberInArr = getRandomNumber(4) + 5;
+  const index = getRandomNumber(numberInArr);
   const copyArrProgress = arrProgress.slice(0, numberInArr);
   const secretNum = arrProgress[index];
   copyArrProgress[index] = '..';

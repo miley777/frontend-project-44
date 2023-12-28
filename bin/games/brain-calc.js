@@ -3,29 +3,41 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
-  questionGreeting, getRandomNum, userName, getIntermidiateCheck, getFinalCheck,
+  questionGreeting, getRandomNumber, userName, getIntermidiateCheck, getFinalCheck,
 } from '../../src/index.js';
 
-const checkAnswer = () => {
-  const systNum1 = getRandomNum();
-  const systNum2 = getRandomNum();
-  const arrSymbols = ['+', '-', '*'];
-  const index = getRandomNum(3);
-  const symbol = arrSymbols[index];
-  console.log(`Question: ${systNum1} ${symbol} ${systNum2}`);
-  const usersAnswer = readlineSync.question('Your answer: ');
+import {
+  getRandomNumber,
+} from '../../src/helpers.js';
+
+const getSymbol = (symbol, systNum1, systNum2) = {
   let result;
-  switch (symbol) {
+  const operator = symbol;
+  switch (operator) {
     case '+':
       result = systNum1 + systNum2;
+      return result;
       break;
     case '-':
       result = systNum1 - systNum2;
+      return result;
       break;
     default:
       result = systNum1 * systNum2;
+      return result;
   }
-  const desicion = result === Number(usersAnswer) ? 0 : 1;
+};
+
+const checkAnswer = () => {
+  const systNum1 = getRandomNumber();
+  const systNum2 = getRandomNumber();
+  const operators = ['+', '-', '*'];
+  const index = getRandomNumber(3);
+  const symbol = operators[index];
+  console.log(`Question: ${systNum1} ${symbol} ${systNum2}`);
+  const usersAnswer = readlineSync.question('Your answer: ');
+  let resultSymbol = getSymbol(symbol, systNum1, systNum2);
+  const desicion = resultSymbol === Number(usersAnswer) ? 0 : 1;
   if (desicion !== 0) {
     console.log(`'${usersAnswer}' is wrong answer ;(. Correct answer was '${result}'`);
   }
