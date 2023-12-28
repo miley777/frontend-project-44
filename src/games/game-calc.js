@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
-  questionGreeting, userName, getIntermidiateCheck, getFinalCheck,
+  questionGreeting, checkRepeat,
 } from '../index.js';
 
 // eslint-disable-next-line import/named
@@ -18,7 +18,7 @@ const getSymbol = (symbol, systNumber1, systNumber2) => {
   }
 };
 
-const checkAnswer = () => {
+export const checkAnswer = () => {
   const systNumber1 = getRandomNumber(1, 100);
   const systNumber2 = getRandomNumber(1, 100);
   const operators = ['+', '-', '*'];
@@ -33,7 +33,7 @@ const checkAnswer = () => {
   }
   return desicion;
 };
-
+/*
 const checkRepeat = () => {
   let count = 0;
   const nameOfUser = userName;
@@ -47,7 +47,7 @@ const checkRepeat = () => {
   }
   getFinalCheck(count, nameOfUser);
 };
-
+*/
 const checkCalc = () => {
   questionGreeting();
   console.log('What is the result of the expression?');

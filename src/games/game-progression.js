@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
-  questionGreeting, userName, getIntermidiateCheck, getFinalCheck,
+  questionGreeting, checkRepeat,
 } from '../index.js';
 
 import getRandomNumber from '../helpers.js';
@@ -16,7 +16,7 @@ const createArrProgression = (arrProgress, systNumber, systNumberAdd) => {
   }
 };
 
-const checkAnswer = () => {
+export const checkAnswer = () => {
   const systNumber = getRandomNumber(1, 10);
   const systNumberAdd = getRandomNumber(1, 10);
   const arrProgress = [];
@@ -34,7 +34,7 @@ const checkAnswer = () => {
   }
   return desicion;
 };
-
+/*
 const checkRepeat = () => {
   let count = 0;
   const nameOfUser = userName;
@@ -48,7 +48,7 @@ const checkRepeat = () => {
   }
   getFinalCheck(count, nameOfUser);
 };
-
+*/
 const checkProgression = () => {
   questionGreeting();
   console.log('What number is missing in the progression?');

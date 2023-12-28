@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 import {
-  questionGreeting,
-  userName, getIntermidiateCheck, getFinalCheck, getCurrectAnswer,
+  questionGreeting, getCurrectAnswer, checkRepeat,
 } from '../index.js';
 
 import getRandomNumber from '../helpers.js';
@@ -11,14 +10,14 @@ const isSystemAnswer = (systNumber) => {
   return systAnswer;
 };
 
-const checkAnswer = () => {
+export const checkAnswer = () => {
   const systNumber = getRandomNumber(1, 100);
   console.log(`Question: ${systNumber}`);
   const usersAnswer = readlineSync.question('Your answer: ');
   const systemAnswer = isSystemAnswer(systNumber);
   return getCurrectAnswer(systemAnswer, usersAnswer);
 };
-
+/*
 const checkRepeat = () => {
   let count = 0;
   const nameOfUser = userName;
@@ -32,7 +31,7 @@ const checkRepeat = () => {
   }
   getFinalCheck(count, nameOfUser);
 };
-
+*/
 const checkParity = () => {
   questionGreeting();
   console.log('Answer "yes" if the number is even, otherwise answer "no".');

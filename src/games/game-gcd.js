@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 // eslint-disable-next-line import/named, import/no-cycle
 import {
   // eslint-disable-next-line import/named
-  questionGreeting, userName, getIntermidiateCheck, getFinalCheck,
+  questionGreeting, checkRepeat,
 } from '../index.js';
 
 import getRandomNumber from '../helpers.js';
@@ -22,7 +22,7 @@ const getArrDivisors = (systNumber1, systNumber2) => {
   return result;
 };
 
-const checkAnswer = () => {
+export const checkAnswer = () => {
   const systNumber1 = getRandomNumber(1, 100);
   const systNumber2 = getRandomNumber(1, 100);
   console.log(`Question: ${systNumber1} ${systNumber2}`);
@@ -34,7 +34,7 @@ const checkAnswer = () => {
   }
   return desicion;
 };
-
+/*
 const checkRepeat = () => {
   let count = 0;
   const nameOfUser = userName;
@@ -48,7 +48,7 @@ const checkRepeat = () => {
   }
   getFinalCheck(count, nameOfUser);
 };
-
+*/
 const checkGcd = () => {
   questionGreeting();
   console.log('Find the greatest common divisor of given numbers.');
