@@ -6,13 +6,13 @@ const getOperator = (operator, number1, number2) => {
   let question;
   switch (operator) {
     case '+':
-      question = `${number1} ${operator} ${number2} `;
+      question = `${number1} ${operator} ${number2}`;
       return [question, String(number1 + number2)];
     case '-':
-      question = `${number1} ${operator} ${number2} `;
+      question = `${number1} ${operator} ${number2}`;
       return [question, String(number1 - number2)];
     case '*':
-      question = `${number1} ${operator} ${number2} `;
+      question = `${number1} ${operator} ${number2}`;
       return [question, String(number1 * number2)];
     default:
       return 'Error';
