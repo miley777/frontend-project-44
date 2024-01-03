@@ -17,8 +17,8 @@ const runEngine = (discription, generateRound) => {
       console.log(`Let's try again, ${userName}!`);
       break;
     }
-    countRounds += 1;
     console.log('Correct!');
+    countRounds += 1;
   }
   if (countRounds === 3) {
     console.log(`Congratulations, ${userName}!`);
