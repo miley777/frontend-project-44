@@ -6,8 +6,8 @@ const getArrayDivisors = (number1, number2) => {
   const arrDiv = [];
   let count = 0;
   arrDiv.push(count);
-  const maxSystNumber = Math.max(number1, number2);
-  while (count <= maxSystNumber) {
+  const minNumber = Math.min(number1, number2);
+  while (count <= minNumber) {
     if ((number1 % count === 0) && (number2 % count === 0)) {
       arrDiv.push(count);
     }
