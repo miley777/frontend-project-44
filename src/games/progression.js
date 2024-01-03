@@ -2,9 +2,7 @@ import runEngine from '../index.js';
 
 import getRandomNumber from '../helpers.js';
 
-const generateRound = () => {
-  const number = getRandomNumber(1, 10);
-  const numberAdd = getRandomNumber(1, 10);
+const getArrayProgression = (number, numberAdd) => {
   const arrProgress = [];
   let sum = number;
   arrProgress.push(number);
@@ -13,6 +11,13 @@ const generateRound = () => {
     sum += numberAdd;
     arrProgress.push(sum);
   }
+  return arrProgress;
+};
+
+const generateRound = () => {
+  const number = getRandomNumber(1, 10);
+  const numberAdd = getRandomNumber(1, 10);
+  const arrProgress = getArrayProgression(number, numberAdd);
   const numberInArr = getRandomNumber(1, 4) + 5;
   const index = getRandomNumber(1, numberInArr);
   const copyArrProgress = arrProgress.slice(0, numberInArr);
