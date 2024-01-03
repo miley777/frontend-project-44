@@ -5,7 +5,7 @@ const runEngine = (discription, generateRound) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(discription);
-  let countRounds = 0;
+  // let countRounds = 0;
   const rounds = 3;
   for (let i = 0; i < rounds; i += 1) {
     const [question, systemAnswer] = generateRound();
@@ -15,14 +15,11 @@ const runEngine = (discription, generateRound) => {
     if (desicion !== true) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${systemAnswer}'`);
       console.log(`Let's try again, ${userName}!`);
-      break;
+      return;
     }
     console.log('Correct!');
-    countRounds += 1;
   }
-  if (countRounds === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default runEngine;
