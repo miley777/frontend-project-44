@@ -11,9 +11,11 @@ const getOperator = (operator, number1, number2) => {
     case '-':
       question = `${number1} ${operator} ${number2}`;
       return [question, String(number1 - number2)];
-    default:
+    case '*':
       question = `${number1} ${operator} ${number2}`;
       return [question, String(number1 * number2)];
+    default:
+      return 'Error';
   }
 };
 
@@ -21,7 +23,7 @@ const generateRound = () => {
   const number1 = getRandomNumber(1, 100);
   const number2 = getRandomNumber(1, 100);
   const operators = ['+', '-', '*'];
-  const index = getRandomNumber(0, operators.length);
+  const index = getRandomNumber(0, operators.length - 1);
   const operator = operators[index];
   const result = getOperator(operator, number1, number2);
   return result;
