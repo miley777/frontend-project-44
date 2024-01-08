@@ -2,28 +2,27 @@ import runEngine from '../index.js';
 
 import getRandomNumber from '../helpers.js';
 
-const getArrayProgression = (number, numberAdd) => {
-  const arrProgress = [];
+const getProgression = (number, numberAdd) => {
+  const minProgressionLength = 5;
+  const progressionLength = getRandomNumber(minProgressionLength, 10);
+  const progression = [];
   let sum = number;
-  arrProgress.push(number);
-  const maxCount = 10;
-  for (let i = 1; i <= maxCount - 1; i += 1) {
+  progression.push(number);
+  for (let i = 1; i <= progressionLength - 1; i += 1) {
     sum += numberAdd;
-    arrProgress.push(sum);
+    progression.push(sum);
   }
-  return arrProgress;
+  return progression;
 };
 
 const generateRound = () => {
   const number = getRandomNumber(1, 10);
   const numberAdd = getRandomNumber(1, 10);
-  const arrProgress = getArrayProgression(number, numberAdd);
-  const numberInArr = getRandomNumber(1, 4) + 5;
-  const index = getRandomNumber(1, numberInArr);
-  const copyArrProgress = arrProgress.slice(0, numberInArr);
-  const secretNumber = arrProgress[index];
-  copyArrProgress[index] = '..';
-  const question = String(copyArrProgress.join(' '));
+  const progression = getProgression(number, numberAdd);
+  const hiddenIndex = getRandomNumber(0, progression.length - 1);
+  const secretNumber = progression[hiddenIndex];
+  progression[hiddenIndex] = '..';
+  const question = progression.join(' ');
   return [question, String(secretNumber)];
 };
 

@@ -3,15 +3,15 @@ import runEngine from '../index.js';
 import getRandomNumber from '../helpers.js';
 
 const isEven = (number) => {
-  const result = number % 2 === 0 ? 'yes' : 'no';
+  const result = number % 2 === 0;
   return result;
 };
 
 const generateRound = () => {
   const number = getRandomNumber(1, 100);
-  const systemAnswer = isEven(number);
+  const answer = isEven(number) ? 'yes' : 'no';
   const question = String(number);
-  return [question, systemAnswer];
+  return [question, answer];
 };
 
 const runParity = () => {

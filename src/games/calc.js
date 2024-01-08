@@ -2,20 +2,18 @@ import runEngine from '../index.js';
 
 import getRandomNumber from '../helpers.js';
 
-const getOperator = (operator, number1, number2) => {
-  let question;
+const calculate = (operator, number1, number2) => {
+  let question = `${number1} ${operator} ${number2}`;
   switch (operator) {
     case '+':
-      question = `${number1} ${operator} ${number2}`;
       return [question, String(number1 + number2)];
     case '-':
-      question = `${number1} ${operator} ${number2}`;
       return [question, String(number1 - number2)];
     case '*':
-      question = `${number1} ${operator} ${number2}`;
       return [question, String(number1 * number2)];
     default:
-      return 'Error';
+      question = 'Error';
+      return question;
   }
 };
 
@@ -25,7 +23,7 @@ const generateRound = () => {
   const operators = ['+', '-', '*'];
   const index = getRandomNumber(0, operators.length - 1);
   const operator = operators[index];
-  const result = getOperator(operator, number1, number2);
+  const result = calculate(operator, number1, number2);
   return result;
 };
 

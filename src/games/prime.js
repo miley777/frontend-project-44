@@ -14,15 +14,15 @@ const isPrime = (primeNumber) => {
     }
     count += 1;
   }
-  return [result, primeNumber];
+  return result;
 };
 
 const generateRound = () => {
   const number = getRandomNumber(1, 100);
-  const [result, primeNumber] = isPrime(number);
-  const question = String(primeNumber);
-  const systemAnswer = result === true ? 'yes' : 'no';
-  return [question, systemAnswer];
+  const result = isPrime(number);
+  const question = String(number);
+  const answer = result ? 'yes' : 'no';
+  return [question, answer];
 };
 
 const runPrime = () => {
