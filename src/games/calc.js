@@ -3,7 +3,7 @@ import runEngine from '../index.js';
 import getRandomNumber from '../helpers.js';
 
 const calculate = (operator, number1, number2) => {
-  let question = `${number1} ${operator} ${number2}`;
+  const question = `${number1} ${operator} ${number2}`;
   switch (operator) {
     case '+':
       return [question, String(number1 + number2)];
@@ -12,8 +12,7 @@ const calculate = (operator, number1, number2) => {
     case '*':
       return [question, String(number1 * number2)];
     default:
-      question = 'Error';
-      return question;
+      return `Error ${question}`;
   }
 };
 

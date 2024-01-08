@@ -17,8 +17,7 @@ const generateRound = () => {
   const number = getRandomNumber(1, 10);
   const numberAdd = getRandomNumber(1, 10);
   const minProgressionLength = 5;
-  const maxCount = 10;
-  const progressionLength = getRandomNumber(minProgressionLength, maxCount);
+  const progressionLength = getRandomNumber(minProgressionLength, 10);
   const progression = getProgression(number, numberAdd, progressionLength);
   const hiddenIndex = getRandomNumber(0, progression.length - 1);
   const secretNumber = progression[hiddenIndex];
