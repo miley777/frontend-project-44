@@ -11,7 +11,7 @@ const calculate = (operator, number1, number2) => {
     case '*':
       return String(number1 * number2);
     default:
-      throw new Error(`Error : ${operator}`);
+      throw new Error(`Error : ${operator}!`);
   }
 };
 
